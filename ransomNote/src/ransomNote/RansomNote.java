@@ -34,7 +34,7 @@ public class RansomNote {
 	 * This method will organize the string magazine into the hashTable (initializing the class attributes in the process). To complete this it will be calling other methods: hashValue and linearHashing
 	 * @param magazine - magazine text
 	 */
-	public void placingMagazineHashTable(String magazine) {
+	private void placingMagazineHashTable(String magazine) {
 		
 		String [] magazineSplitted = magazine.split(" ");
 	
@@ -67,7 +67,7 @@ public class RansomNote {
 	 * @param note - note text
 	 * @return boolean isNote that will be true if the note can be written with the words in magazine
 	 */
-	public boolean verifyNoteInHashTable(String note){
+	private boolean verifyNoteInHashTable(String note){
 		boolean isNote = true;
 		String[] noteSplitted = note.split(" ");
 		
@@ -100,7 +100,7 @@ public class RansomNote {
 	 * @param text - text
 	 * @return final value of the sum
 	 */
-	public int StringToCharSum(String text) {
+	private int StringToCharSum(String text) {
 		int total=0;
 		
 		for(int i=0;i<text.length();i++) {
@@ -115,7 +115,7 @@ public class RansomNote {
 	 * @param word
 	 * @return true when it was found, false when it was not found
 	 */
-	public boolean searchLinearForm(String word) {
+	private boolean searchLinearForm(String word) {
 		boolean isThere=false;
 		
 		int placeGenerated = hashValue(word);
@@ -151,7 +151,7 @@ public class RansomNote {
 	 * @param value - text that we are searching
 	 * @return true if it is in the hashTable, false if not
 	 */
-	public boolean searchLinearFormR(int place, String value) {
+	private boolean searchLinearFormR(int place, String value) {
 		
 		if(hashTable[place] != null) {
 			if(hashTable[place].equals(value)) {
@@ -182,7 +182,7 @@ public class RansomNote {
 	 * @param place - place in the hashTable that we are now
 	 * @param value - text that we are placing
 	 */
-	public void linealHashing(int place,String value) {
+	private void linealHashing(int place,String value) {
 		
 		if(hashTable[place]==null) {
 			hashTable[place]=value;
@@ -199,7 +199,7 @@ public class RansomNote {
 	/**
 	 * method to print the table (debug option)
 	 */
-	public void printHashTable() {
+	private void printHashTable() {
 		String representation = "";
 		
 		for(int i=0;i<hashTable.length;i++) {
